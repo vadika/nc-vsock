@@ -61,6 +61,7 @@ static int vsock_listen(const char *port_str)
 	struct sockaddr_vm sa_listen = {
 		.svm_family = AF_VSOCK,
 		.svm_cid = VMADDR_CID_ANY,
+                .svm_flags = VMADDR_FLAG_TO_HOST,
 	};
 	struct sockaddr_vm sa_client;
 	socklen_t socklen_client = sizeof(sa_client);
